@@ -1,0 +1,106 @@
+using System;
+using System.Text.RegularExpressions;
+using static System.Net.Mime.MediaTypeNames;
+
+namespace MyApp 
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //1.Написать регулярное выражение, которые проверят строки на соответствие:
+            //«a», «aaaaaa», «a aa a». 
+            
+            // Для "aaaaaa"
+            Console.WriteLine("Введите проверку для «aaaaaa» " + "\n");
+            string str2 = Console.ReadLine();
+            Regex regexa2 = new Regex(@"\d{1}");
+            if (regexa2.IsMatch(str2))
+            {
+                Console.WriteLine("Yeas" + "\n");
+            }
+            else
+            {
+                Console.WriteLine("NO" + "\n");
+            }
+            
+
+            
+
+           // Для "а"
+
+           Console.WriteLine("Введите проверку для «a» " + "\n");
+           string str1 = Console.ReadLine();
+           Regex regexa1 = new Regex(@"^[a]$");
+           if (regexa1.IsMatch(str1))
+           {
+               Console.WriteLine("Yeas" + "\n");
+           }
+           else
+           {
+               Console.WriteLine("NO" + "\n");
+           }
+
+            
+
+            
+
+         Console.WriteLine("Введите проверку для «a aa a» " + "\n");
+        string str3 = Console.ReadLine();
+        Regex regexa3 = new Regex(@"\b");
+        if (regexa3.IsMatch(str3))
+        {
+            Console.WriteLine("Yeas" + "\n");
+        }
+        else
+        {
+            Console.WriteLine("NO" + "\n");
+        }
+            
+
+             string path = "C:\\Labs\\AllLabs\\LR5\\LR5\\testData.xml"; 
+
+            string[] input = File.ReadAllLines(path); //чтение массива строк
+            for (int i = 0; i < input.Length; ++i)
+            {
+                Regex regex = new Regex(@"\d+ .+");
+                if (regex.IsMatch(input[i])) 
+                {
+                    Console.WriteLine(regex.Match(input[i]));
+                }
+                else 
+                {
+                    Console.WriteLine("Not true");
+                } 
+
+            }
+            
+
+            //2.Написать регулярное выражение, заставляющее вводить не менее 5 алфавитно - цифровых символов.
+            Console.WriteLine("Введите проверку для «aaaaaa» " + "\n");
+            string str4 = Console.ReadLine();
+            Regex regexa4 = new Regex(@"(\d|[a-z]){5,}");
+            if (regexa4.IsMatch(str4))
+            {
+                Console.WriteLine("Yeas" + "\n");
+            }
+            else
+            {
+                Console.WriteLine("NO" + "\n");
+            }
+
+            // 3.Написать регулярное выражение, которое проверят email простого вида(например, test@test.test).
+            Console.WriteLine("Введите проверку для «aaaaaa» " + "\n");
+            string str5 = Console.ReadLine();
+            Regex regexa5 = new Regex(@"(\d|[a-z]){5,}");
+            if (regexa4.IsMatch(str4))
+            {
+                Console.WriteLine("Yeas" + "\n");
+            }
+            else
+            {
+                Console.WriteLine("NO" + "\n");
+            }
+        }
+    }
+}
