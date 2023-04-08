@@ -10,7 +10,7 @@ namespace MyApp
 
         static void Main(string[] args)
         {
-            Zadanie.Z5b();
+            Zadanie.Z1();
         }
     }
 }

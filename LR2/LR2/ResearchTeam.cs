@@ -12,9 +12,8 @@ namespace LR2
         string orgName;
         int regNumber;
         TimeFrame frame;
-        List<Paper> paperList = new();
-        
-
+        Paper[] paperList = new Paper[0];
+    
 
         public ResearchTeam()
         {
@@ -22,9 +21,9 @@ namespace LR2
             orgName = string.Empty;
             regNumber = 0;
             frame = new TimeFrame();
-            paperList = new List<Paper>();
+            paperList = new Paper[0];
         }
-        public ResearchTeam(string themeName, string orgName, int regNumber, TimeFrame frame, List<Paper> paperList)
+        public ResearchTeam(string themeName, string orgName, int regNumber, TimeFrame frame, Paper[] paperList)
         {
             this.themeName = themeName;
             this.orgName = orgName;
@@ -52,15 +51,15 @@ namespace LR2
             get { return frame; }
             set { frame = value; }
         }
-        public List<Paper> PaperList
+        public Paper[] PaperList
         { get { return paperList; }
-          set{ paperList = value; }
+          set { paperList = value; }
         }
         public Paper? LastPaper
         {
             get
             {
-                if(PaperList == null || PaperList.Count == 0)
+                if(PaperList == null || PaperList.Length == 0)
                 {
                     return null;
                 }
@@ -68,7 +67,7 @@ namespace LR2
                 {
                     DateTime max = DateTime.MinValue;
                     int maxIndex = 0;
-                    for (int i = 0; i < PaperList.Count; i++)
+                    for (int i = 0; i < PaperList.Length; i++)
                     {
                         if (PaperList[i].Pubdate>max)
                         {
@@ -83,12 +82,25 @@ namespace LR2
         }
         public void AddPapers(params Paper[] newPapers)
         {
-            PaperList.AddRange(newPapers);
+            //создать новый массив с размером = старому + новый
+            //copy old elements PaperList[] - old
+            //copy new elements 
+            Paper[] shit = new Paper[PaperList.Length + newPapers.Length];
+            Array.Copy(PaperList, 0, shit, 0, PaperList.Length);
+            Array.Copy(newPapers, 0, shit, PaperList.Length, newPapers.Length);
+            PaperList = shit;
  
         }
         public string ToFullString()
         {
-            return ($"Theme: {themeName}, OrgName: {orgName}, RegNumber: {regNumber}, ResearchTime: {frame}, PapersList {paperList}");
+            
+            
+            var result = string.Empty;
+            for (int i = 0; i < PaperList.Length; i++)
+            {
+                result += ", " +  PaperList[i].ToFullString();
+            }
+            return ($"Theme: {themeName}, OrgName: {orgName}, RegNumber: {regNumber}, ResearchTime: {frame}, PapersList: {result}");
         }
 
         public string ToShortString()

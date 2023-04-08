@@ -21,8 +21,7 @@ Sergay Sergeevich Sergeev, 90 let, g.Tomsk.
 Sergay Sergeevich Sergeev, 01 let, g.Tomsk.
 Sergay Sergeevich Sergeev, 10 let, g.Tomsk.
 Sergay Sergeevich Sergeev, 10 let, g.Tomsk.
-Fuck fuck
-Fuck Fuck Fuck
+
 
 002, Новосибирск, Иванов Иван Иванович, 1, 01.01.23, Междугородний, 12:00, 14:00
 001, Новосибирск, Иванов Иван Иванович, 1, 01.01.23, Междугородний, 12:00, 14:00

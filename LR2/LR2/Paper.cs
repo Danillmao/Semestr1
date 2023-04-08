@@ -28,7 +28,7 @@ namespace LR2
 
         public string ToFullString()
         {
-            return Workname + " " + Person + "" + Pubdate;
+            return Workname + " " + Person.ToShortString() + " " + Pubdate.ToShortDateString();
         }
     }
 }

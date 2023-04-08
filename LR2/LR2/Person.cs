@@ -11,10 +11,10 @@ namespace LR2
         string firstName;
         string lastName;
         DateTime birthDate;
-        public Person ()
+        public Person()
         {
-            firstName = string.Empty;
-            lastName = string.Empty;
+            firstName = "";
+            lastName = "";
             birthDate = new DateTime(2023, 01, 01); 
         }
         public Person(string firstName, string lastName, DateTime birthDate)
@@ -39,25 +39,19 @@ namespace LR2
             get { return birthDate; }
             set { birthDate = value; }
         }
-        int Bdate
+        public int Bdate
         {
-            get
-            {
-                return Convert.ToInt32(birthDate);
-            }
-            set
-            {
-                birthDate = Convert.ToDateTime(value);
-            }
+            get { return birthDate.Year; }
+            set { birthDate = new DateTime(value, birthDate.Month, birthDate.Day); }
         }
         public string ToFullString()
         {
-            return firstName + " " + lastName + " " + birthDate;
+            return FirstName + " " + LastName + " " + BirthDate;
         }
 
         public string ToShortString()
         {
-            return firstName + " " + lastName;
+            return FirstName + " " + LastName;
         }
 
     }

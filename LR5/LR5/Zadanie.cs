@@ -13,15 +13,15 @@ namespace LR5
         {
             //1.Написать регулярное выражение, которые проверят строки на соответствие
 
+            //TODO: в одну регулярку
             string path = "AllValues.txt";
             string[] input = File.ReadAllLines(path); //чтение массива строк
             for (int i = 0; i < input.Length; ++i)
             {
-                Regex regex = new Regex(@"^[a]$");
+                Regex regex = new Regex(@"(^a$)|(^a{5}$)|(^a aa a$)");
                 if (regex.IsMatch(input[i]))
                 {
                     Console.WriteLine(regex.Match(input[i]));
-
                 }
                 else
                 {
@@ -61,11 +61,11 @@ namespace LR5
         public static void Z2()
         {
             string path = "AllValues.txt";
-
+            //TODO: проверять всю строку целиком
             string[] input = File.ReadAllLines(path); //чтение массива строк
             for (int i = 0; i < input.Length; ++i)
             {
-                Regex regex = new Regex(@"(\d|[a-z]){5,}");
+                Regex regex = new Regex(@"[a-z\d]{5,}");
                 if (regex.IsMatch(input[i]))
                 {
                     Console.WriteLine(regex.Match(input[i]));
@@ -86,7 +86,8 @@ namespace LR5
             string[] input = File.ReadAllLines(path); //чтение массива строк
             for (int i = 0; i < input.Length; ++i)
             {
-                Regex regex = new Regex(@"[a-z]+[^ ][@]{1}[^ ][a-z]+[^ ]\W[a-z]+");
+                //TODO: регулярка пропустит слишком много лишнего
+                Regex regex = new Regex(@"[a-z]+[^ ]@[^ ][a-z]+[^ ]\W[a-z]+");
                 if (regex.IsMatch(input[i]))
                 {
                     Console.WriteLine(regex.Match(input[i]));
@@ -106,6 +107,8 @@ namespace LR5
             string[] input = File.ReadAllLines(path); //чтение массива строк
             for (int i = 0; i < input.Length; ++i)
             {
+                //TODO: регулярка не подходит ни под один из вариантов
+                //TODO: выводить результат нужно отдельно,каждую группу
                 Regex regex = new Regex(@"([A-Za-z])+\s([A-Za-z])+\s([A-Za-z])+[,]\s([1-9][0-9]+)\s([A-Za-z])+[,]\s[g][.]([A-Za-z])+[.]");
                 if (regex.IsMatch(input[i]))
                 {

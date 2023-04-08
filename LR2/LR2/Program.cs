@@ -7,26 +7,28 @@ namespace LR2
         static void Main()
         {
             Person Danil = new Person();
-            Danil.FirstName = "Данон";
-            Danil.LastName = "Маразмов";
+            Danil.FirstName = "Lion";
+            Danil.LastName = "Tolstoy";
             Danil.BirthDate = new DateTime(2003, 09, 08);
             ///
-            Paper Papers = new Paper();
-            Papers.Pubdate = DateTime.Now;
-            Papers.Person = Danil;
-            Papers.Workname = "Война и мир";
+            Paper Kniga2 = new Paper();
+            Kniga2.Pubdate = DateTime.Now;
+            Kniga2.Person = Danil;
+            Kniga2.Workname = "Война и мир";
+
             Paper Kniga = new();
-            Kniga.Pubdate = DateTime.Now;
+            Kniga.Pubdate = new DateTime(1863, 01 , 01);
             Kniga.Person = Danil;
-            Kniga.Workname = "Бровтф";
+            Kniga.Workname = "Voynaimir";
 
             ///
             ResearchTeam MyTeam = new ResearchTeam();
-            MyTeam.ThemeName= "Лоли ";
-            MyTeam.OrgName = "Лолихантерс ";
+            MyTeam.ThemeName= "Overwatch";
+            MyTeam.OrgName = "Blizzard";
             MyTeam.RegNumber = 1337;
             MyTeam.Frame = TimeFrame.Year;
-            
+            MyTeam.AddPapers(Kniga);
+            //MyTeam.PaperList.Add(Kniga2);
             
             Console.WriteLine(MyTeam.ToFullString());
           
