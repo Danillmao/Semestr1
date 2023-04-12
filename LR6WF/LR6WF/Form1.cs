@@ -27,7 +27,6 @@ namespace LR6WF
         {
             Integrator i1 = new Integrator(equation); //создаем интегратор для этого уравнения
             double integrValue = i1.Integrate(10, 30); //вызываем интегрирование на интвервале 10;30
-
             Series mySeriesOfPoint = new Series("1st func");
             mySeriesOfPoint.ChartType = SeriesChartType.Line;
             double x1 = int.Parse(textBox1.Text);
@@ -82,14 +81,3 @@ namespace LR6WF
      
     }
 }
-/*
-     label4.Text = Timed.LMAO.ToString();
-               Graphics graphics = pictureBox1.CreateGraphics();
-            Pen pen = new Pen(Color.Red, 3f);
-            Point[] points = new Point[1000];
-            for (int i = 0; i < points.Length; i++)
-            {
-                points[i] = new Point(i, (int)(Math.Sin((double)i / 10) * 100 + 200));
-            }
-            graphics.DrawLines(pen, points);
- */

@@ -20,8 +20,8 @@ namespace LR6WF
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            if(comboBox1.SelectedItem == "Квадратное уравнение")
+
+            if (comboBox1.SelectedItem == "Квадратное уравнение")
             {
                 
                 Form1 form1 = new Form1();

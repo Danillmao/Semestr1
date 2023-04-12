@@ -66,6 +66,8 @@
     <Compile Include="ThirdForm.Designer.cs">
       <DependentUpon>ThirdForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Интеграторы\RectangleIntegrator.cs" />
+    <Compile Include="Интеграторы\TrapezoidIntegrator.cs" />
     <Compile Include="Уравнения\Bequation.cs" />
     <Compile Include="Equation.cs" />
     <Compile Include="Уравнения\Cequation.cs" />
@@ -81,7 +83,7 @@
     <Compile Include="HomeDialog.Designer.cs">
       <DependentUpon>HomeDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Integrator.cs" />
+    <Compile Include="Интеграторы\Integrator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Уравнения\QuadEquation.cs" />
