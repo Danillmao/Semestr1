@@ -1,16 +1,15 @@
-﻿using LR5;
-using System;
+﻿using System;
 using System.Text.RegularExpressions;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace MyApp 
+namespace LR5.Cs
 {
     internal class Program
     {
 
         static void Main(string[] args)
         {
-            Zadanie.Z1();
+            Zadanie.Z4();
         }
     }
 }

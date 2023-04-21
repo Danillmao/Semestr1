@@ -53,6 +53,7 @@ namespace LR6WF
                 if (q1.ShowDialog(this) == DialogResult.OK)
                 {
                     equation = new QuadEquation(q1.A, q1.B, q1.C);    //создаем объект класса "кв. уравнение"
+                    
                 }
             }
             else if (comboBox1.SelectedIndex == 1)
@@ -72,6 +73,7 @@ namespace LR6WF
                 }                          
             }
             DrawFunction(equation);
+            
         }
         private void Form1_Load(object sender, EventArgs e)
         {

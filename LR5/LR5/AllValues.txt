@@ -12,15 +12,19 @@ dsa1
 
 //3.Написать регулярное выражение, которое проверят email простого вида
 test@test.test
+mai@mail.ru
+lmao@gmail.com
+dani.marozov2003@gmail.com
 
 //4.Выполните одно из заданий, приведенных ниже.
-Вариант задания согласуется с преподавателем. Для получения значения подстроки использовать группировку.
-Вариант 3 (C)
-Ivanov Ivan Ivanovich, 20 years, g.Novosibirsk.
-Sergay Sergeevich Sergeev, 90 let, g.Tomsk.
-Sergay Sergeevich Sergeev, 01 let, g.Tomsk.
-Sergay Sergeevich Sergeev, 10 let, g.Tomsk.
-Sergay Sergeevich Sergeev, 10 let, g.Tomsk.
+
+ул.Высоцкого д.20/3
+
+ул.Высоцкого д.20/3
+
+ул.Высоцкого д.20/3
+
+
 
 
 002, Новосибирск, Иванов Иван Иванович, 1, 01.01.23, Междугородний, 12:00, 14:00

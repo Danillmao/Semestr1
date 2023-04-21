@@ -66,6 +66,7 @@
     <Compile Include="ThirdForm.Designer.cs">
       <DependentUpon>ThirdForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Интеграторы\IntegratorBase.cs" />
     <Compile Include="Интеграторы\RectangleIntegrator.cs" />
     <Compile Include="Интеграторы\TrapezoidIntegrator.cs" />
     <Compile Include="Уравнения\Bequation.cs" />
