@@ -9,7 +9,7 @@ namespace LR5.Cs
 
         static void Main(string[] args)
         {
-            Zadanie.Z4();
+            Zadanie.Z3();
         }
     }
 }

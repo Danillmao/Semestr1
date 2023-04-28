@@ -49,7 +49,7 @@ namespace LR5.Cs
             for (int i = 0; i < input.Length; ++i)
             {
                 //TODO: регулярка пропустит слишком много лишнего
-                Regex regex = new Regex(@"^[a-zA-Z0-9.]+@[a-zA-Z0-9.]+[a-zA-Z]{2,}$");
+                Regex regex = new Regex(@"(\w+([-+._]\w+)*@\w+([.]\w+)*\.\w+([-.]\w+)*)$");
                 if (regex.IsMatch(input[i]))
                 {
                     Console.WriteLine(regex.Match(input[i]));
