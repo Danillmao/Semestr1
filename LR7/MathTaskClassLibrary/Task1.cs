@@ -4,19 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MathTaskClassLibrary
+namespace MathTaskLibrary
 {
-    internal class Task1
+    public class Task1
     {
-        public int StringForm(int a, int b)
+        public  string GetFirstNLetters(int n)
         {
-            string s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            int n = 5;
-            
+            if (n < 1 || n > 26)
+            {
+                throw new ArgumentException("Параметр должен быть от 1 до 26");
+            }
 
-
-            return ;
+            string result = "";
+            for (int i = 0; i < n; i++)
+            {
+                result += (char)(65 + i);
+            }
+            return result;
         }
+
 
 
     }
