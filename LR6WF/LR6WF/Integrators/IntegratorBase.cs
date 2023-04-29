@@ -8,7 +8,7 @@ namespace LR6WF.Интеграторы
 {
     public abstract class IntegratorBase
     {
-        public abstract double Integrate(double x1, double x2, int N);
+        public abstract double Integrate(Equation equation, double x1, double x2, int N);
 
         public abstract string MethodName { get; }
     }

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -41,8 +41,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.equtaionCB = new System.Windows.Forms.ComboBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.methodCB = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
@@ -114,33 +117,63 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "N";
             // 
-            // comboBox1
+            // equtaionCB
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.equtaionCB.FormattingEnabled = true;
+            this.equtaionCB.Items.AddRange(new object[] {
             "quadEquation",
             "secondEquation",
             "thirdEquation"});
-            this.comboBox1.Location = new System.Drawing.Point(688, 159);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 15;
+            this.equtaionCB.Location = new System.Drawing.Point(688, 177);
+            this.equtaionCB.Name = "equtaionCB";
+            this.equtaionCB.Size = new System.Drawing.Size(100, 21);
+            this.equtaionCB.TabIndex = 15;
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(20, 12);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(662, 426);
             this.chart1.TabIndex = 16;
             this.chart1.Text = "chart1";
+            // 
+            // methodCB
+            // 
+            this.methodCB.FormattingEnabled = true;
+            this.methodCB.Items.AddRange(new object[] {
+            "Прямоугольный",
+            "Трапезоидный",
+            "Симпсона"});
+            this.methodCB.Location = new System.Drawing.Point(688, 137);
+            this.methodCB.Name = "methodCB";
+            this.methodCB.Size = new System.Drawing.Size(100, 21);
+            this.methodCB.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(685, 121);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Метод";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(685, 161);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Тип уравнения";
             // 
             // Form1
             // 
@@ -148,8 +181,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.methodCB);
             this.Controls.Add(this.chart1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.equtaionCB);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label7);
@@ -162,7 +198,6 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-           
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
@@ -181,8 +216,11 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox equtaionCB;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.ComboBox methodCB;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

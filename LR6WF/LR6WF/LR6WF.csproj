@@ -48,52 +48,42 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DrawClass.cs" />
-    <Compile Include="QuadForm.cs">
+    <Compile Include="Forms\QuadForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuadForm.Designer.cs">
+    <Compile Include="Forms\QuadForm.Designer.cs">
       <DependentUpon>QuadForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SecondForm.cs">
+    <Compile Include="Forms\SecondForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SecondForm.Designer.cs">
+    <Compile Include="Forms\SecondForm.Designer.cs">
       <DependentUpon>SecondForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThirdForm.cs">
+    <Compile Include="Forms\ThirdForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThirdForm.Designer.cs">
+    <Compile Include="Forms\ThirdForm.Designer.cs">
       <DependentUpon>ThirdForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Интеграторы\IntegratorBase.cs" />
-    <Compile Include="Интеграторы\SimpsonIntegrator.cs" />
-    <Compile Include="Интеграторы\TrapezoidIntegrator.cs" />
-    <Compile Include="Уравнения\Bequation.cs" />
-    <Compile Include="Equation.cs" />
-    <Compile Include="Уравнения\Cequation.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Integrators\IntegratorBase.cs" />
+    <Compile Include="Integrators\SimpsonIntegrator.cs" />
+    <Compile Include="Integrators\TrapezoidIntegrator.cs" />
+    <Compile Include="Equations\Bequation.cs" />
+    <Compile Include="Equations\Equation.cs" />
+    <Compile Include="Equations\Cequation.cs" />
+    <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomeDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HomeDialog.Designer.cs">
-      <DependentUpon>HomeDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Интеграторы\Integrator.cs" />
+    <Compile Include="Integrators\Integrator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Уравнения\QuadEquation.cs" />
-    <Compile Include="Timed.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <Compile Include="Equations\QuadEquation.cs" />
+    <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HomeDialog.resx">
-      <DependentUpon>HomeDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -104,13 +94,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="QuadForm.resx">
+    <EmbeddedResource Include="Forms\QuadForm.resx">
       <DependentUpon>QuadForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SecondForm.resx">
+    <EmbeddedResource Include="Forms\SecondForm.resx">
       <DependentUpon>SecondForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThirdForm.resx">
+    <EmbeddedResource Include="Forms\ThirdForm.resx">
       <DependentUpon>ThirdForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

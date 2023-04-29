@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace LR6WF.Интеграторы
 {
-    public class SimpsonIntegrator : IntegratorBase
+    public class TrapezoidalIntegrator : IntegratorBase
     {
         private readonly Equation equation;
 
-        public SimpsonIntegrator(Equation equation)
+        public TrapezoidalIntegrator(Equation equation)
         {
             if (equation == null)
             {
@@ -19,37 +19,30 @@ namespace LR6WF.Интеграторы
             this.equation = equation;
         }
 
-        public SimpsonIntegrator() { }
+        public TrapezoidalIntegrator() { }
 
-        public override double Integrate(double x1, double x2, int N = 100)
+        public override double Integrate(Equation equation, double x1, double x2, int N = 100)
         {
             if (x1 >= x2)
             {
                 throw new ArgumentException("Правая граница интегрирования должны быть больше левой!");
             }
 
-          
+           
             double h = (x2 - x1) / N;
-            double sum = equation.GetValue(x1) + equation.GetValue(x2);
-
-            for (int i = 1; i < N; i += 2)
+            double sum = 0;
+            for (int i = 1; i < N; i++)
             {
                 double xi = x1 + i * h;
-                sum += 4 * equation.GetValue(xi);
+                sum += equation.GetValue(xi);
             }
-
-            for (int i = 2; i < N; i += 2)
-            {
-                double xi = x1 + i * h;
-                sum += 2 * equation.GetValue(xi);
-            }
-
-            return sum * h / 3.0;
+            sum += 0.5 * (equation.GetValue(x1) + equation.GetValue(x2));
+            return sum * h;
         }
 
         public override string MethodName
         {
-            get { return "Метод парабол (метод Симпсона)"; }
+            get { return "Метод трапеций"; }
         }
     }
 
