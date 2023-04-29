@@ -93,22 +93,24 @@ namespace MathTaskClassLibraryTests
             CollectionAssert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void UgadayGodTest()
+        [DataRow(1200,true)]
+        [DataRow(2, false)]
+        [DataRow(4, true)]
+        public void UgadayGodTest(int year, bool expectedResult)
         {
             Task3 god = new Task3();
-            int year = 1200;
-            string expected = "Вискок";
-            string actual = god.UgadayGod(year);
-            Assert.AreEqual(expected, actual);
+            bool actual = god.UgadayGod(year);
+            Assert.AreEqual(expectedResult, actual);
         }
         [TestMethod]
-        public void Task4Test()
+        [DataRow("lol@mail.ru", true)]
+        [DataRow("suis", false)]
+        [DataRow("dano@mail.ru", true)]
+        public void Task4Test(string email, bool expectedResult)
         {
-            Task4 reg = new Task4();
-            string email = "lol@mail.ru";
-            string expected = "lol@mail.ru";
+            Task4 reg = new Task4();      
             string actual = reg.EmailChecker(email); 
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expectedResult, actual);
         }
         [TestMethod]
         public void Task5Test()
