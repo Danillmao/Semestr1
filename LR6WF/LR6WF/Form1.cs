@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LR6WF.Интеграторы;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ namespace LR6WF
 {
     public partial class Form1 : Form
     {
+        private delegate double IntegratorDelegate(Equation equation, double x1, double x2);
         public Form1()
         {
             InitializeComponent();
@@ -70,16 +72,13 @@ namespace LR6WF
                 if (f1.ShowDialog(this) == DialogResult.OK)
                 {
                     equation = new Cequation(f1.A, f1.B);
+                    
                 }                          
             }
             DrawFunction(equation);
+   
             
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-     
+ 
     }
 }

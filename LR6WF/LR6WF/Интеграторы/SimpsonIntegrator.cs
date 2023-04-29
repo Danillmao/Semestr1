@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace LR6WF.Интеграторы
 {
-    public class TrapezoidalIntegrator : IntegratorBase
+    public class SimpsonIntegrator : IntegratorBase
     {
         private readonly Equation equation;
 
-        public TrapezoidalIntegrator(Equation equation)
+        public SimpsonIntegrator(Equation equation)
         {
             if (equation == null)
             {
@@ -19,7 +19,7 @@ namespace LR6WF.Интеграторы
             this.equation = equation;
         }
 
-        public TrapezoidalIntegrator() { }
+        public SimpsonIntegrator() { }
 
         public override double Integrate(double x1, double x2, int N = 100)
         {
@@ -28,21 +28,28 @@ namespace LR6WF.Интеграторы
                 throw new ArgumentException("Правая граница интегрирования должны быть больше левой!");
             }
 
-           
+          
             double h = (x2 - x1) / N;
-            double sum = 0;
-            for (int i = 1; i < N; i++)
+            double sum = equation.GetValue(x1) + equation.GetValue(x2);
+
+            for (int i = 1; i < N; i += 2)
             {
                 double xi = x1 + i * h;
-                sum += equation.GetValue(xi);
+                sum += 4 * equation.GetValue(xi);
             }
-            sum += 0.5 * (equation.GetValue(x1) + equation.GetValue(x2));
-            return sum * h;
+
+            for (int i = 2; i < N; i += 2)
+            {
+                double xi = x1 + i * h;
+                sum += 2 * equation.GetValue(xi);
+            }
+
+            return sum * h / 3.0;
         }
 
         public override string MethodName
         {
-            get { return "Метод трапеций"; }
+            get { return "Метод парабол (метод Симпсона)"; }
         }
     }
 

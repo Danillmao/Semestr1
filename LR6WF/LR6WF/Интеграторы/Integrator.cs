@@ -22,14 +22,14 @@ namespace LR6WF
 
         public Integrator() { }
 
-        public override double Integrate(double x1, double x2)
+        public override double Integrate(double x1, double x2, int N = 100)
         {
             if (x1 >= x2)
             {
                 throw new ArgumentException("Правая граница интегрирования должны быть больше левой!");
             }
 
-            int N = 100;
+            ;
             double h = (x2 - x1) / N;
             double sum = 0;
             for (int i = 0; i < N; i++)
