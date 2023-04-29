@@ -66,6 +66,7 @@
     <Compile Include="Forms\ThirdForm.Designer.cs">
       <DependentUpon>ThirdForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="Integrators\IntegratorBase.cs" />
     <Compile Include="Integrators\SimpsonIntegrator.cs" />
     <Compile Include="Integrators\TrapezoidIntegrator.cs" />
